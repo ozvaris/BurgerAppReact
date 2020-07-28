@@ -15,5 +15,6 @@
     padding: 16px 10px;
     border-bottom: 4px;
     box-sizing: border-box;
+    display: block;
 
 }
