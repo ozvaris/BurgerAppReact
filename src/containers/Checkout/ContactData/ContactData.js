@@ -221,4 +221,4 @@ const mapDispatchToProps = dispatch => {
     };
 }
 
-export default connect(ContractData);
+export default connect(mapStateToProps, mapDispatchToProps)(ContractData);
