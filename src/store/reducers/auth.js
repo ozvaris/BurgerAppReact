@@ -1,4 +1,4 @@
-import { act } from 'react-dom/test-utils';
+//import { act } from 'react-dom/test-utils';
 import * as actionTypes from '../actions/actionTypes';
 import { updateObject } from '../utility';
 
@@ -6,7 +6,8 @@ const initialState = {
     token: null,
     userId: null,
     error: null,
-    loading: false
+    loading: false,
+    isLogin: false
 };
 
 
@@ -14,12 +15,17 @@ const authStart = ( state, action ) => {
     return updateObject( state, { error: null, loading: true } );
 };
 
+const authLogut = ( state, action ) => {
+    return updateObject( state, { token: null, userId: null } );
+};
+
 const authSuccess = ( state, action ) => {
     return updateObject( state, {
         token: action.token,
         userId: action.userId,
         error: null,
-        loading: false
+        loading: false,
+        isLogin: action.isLogin
         } );
 };
 
@@ -34,6 +40,9 @@ const reducer = ( state = initialState, action ) => {
         case actionTypes.AUTH_START: return authStart( state, action );
         case actionTypes.AUTH_SUCCESS: return authSuccess( state, action );
         case actionTypes.AUTH_FAIL: return authFail( state, action );
+        case actionTypes.AUTH_LOGOUT: return authLogut( state, action );
+
+
         default: return state;
     }
 };

@@ -19,13 +19,13 @@ import * as actions from '../../store/actions/index';
 
 class BurgerBuilder extends Component {
 
-    constructor(props) {
-        super(props);
-        // Don't call this.setState() here!
+    // constructor(props) {
+    //     super(props);
+    //     // Don't call this.setState() here!
 
         
         
-      }
+    //   }
 
     state ={
         purchasing : false,

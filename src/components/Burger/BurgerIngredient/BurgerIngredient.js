@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 
 import classes from './BurgerIngredient.module.css';
-import { render } from '@testing-library/react';
+//import { render } from '@testing-library/react';
 
 class BurgerIngredient extends Component {
     render() {
@@ -30,6 +30,7 @@ class BurgerIngredient extends Component {
             case ('salad'):
                 ingredient = <div className={classes.Salad}></div>;
                 break;
+            default: break;
             
             
 
