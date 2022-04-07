@@ -1,10 +1,10 @@
-const  proxy  = require('http-proxy-middleware');
- 
+const proxy = require("http-proxy-middleware");
+
 module.exports = (app) => {
-    app.use(
-        proxy.createProxyMiddleware ("/ingredients", {
-            target: "https://myreact-burgerbuilder-bc718.firebaseio.com",
-            cangeOrigin: true
-        })
-    );
+  app.use(
+    proxy.createProxyMiddleware("/ingredients", {
+      target: process.env.REACT_APP_DATABASE,
+      cangeOrigin: true,
+    })
+  );
 };
